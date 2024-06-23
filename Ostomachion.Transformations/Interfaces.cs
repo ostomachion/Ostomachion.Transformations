@@ -15,8 +15,10 @@ public interface IVector<TSelf, TScalar> :
     where TScalar : struct, INumberBase<TScalar>
 { }
 
-public interface ITransform<TSelf, in TIn, out TOut, TScalar>
-    where TSelf : struct, ITransform<TSelf, TIn, TOut, TScalar>, IEquatable<TSelf>
+public interface ITransform<TSelf, in TIn, out TOut, TScalar> :
+    IEquatable<TSelf>,
+    IEqualityOperators<TSelf, TSelf, bool>
+    where TSelf : struct, ITransform<TSelf, TIn, TOut, TScalar>
     where TIn : struct, IVector<TIn, TScalar>
     where TOut : struct, IVector<TOut, TScalar>
     where TScalar : struct, INumberBase<TScalar>

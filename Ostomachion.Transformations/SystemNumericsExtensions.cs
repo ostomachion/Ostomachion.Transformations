@@ -5,7 +5,7 @@ namespace Ostomachion.Transformations;
 internal static class SystemNumericsExtensions
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    internal static ref readonly ProjectiveColumnTransform4R3 AsProjectiveTransformR3(in this Matrix4x4 m) => ref Unsafe.As<Matrix4x4, ProjectiveColumnTransform4R3>(ref Unsafe.AsRef(in m));
+    internal static ref readonly ProjectiveTransform4R3 AsProjectiveTransformR3(in this Matrix4x4 m) => ref Unsafe.As<Matrix4x4, ProjectiveTransform4R3>(ref Unsafe.AsRef(in m));
 
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
